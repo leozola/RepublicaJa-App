@@ -1,0 +1,35 @@
+<ion-view title="Login">
+    <ion-content>
+        <div class="p">
+            <img class="full-image" src="img/logo.png">
+        </div>
+        <h1 class="name-app">RepublicaJá</h1>
+
+        <form name="formLogin">
+            <div class="list list-inset">
+                <label class="item item-input"> 
+                        <i class="icon ion-email placeholder-icon"></i>
+                        <input type="email" name="email" ng-model="login.email" maxlength="60" placeholder="E-mail" ng-required="true"> 
+                    <span class="assertive" ng-show="formLogin.email.$invalid && formLogin.email.$dirty">!</span>
+                    </label>
+                <label class="item item-input"> 
+                <i class="icon ion-locked placeholder-icon"></i>
+                <input type="password" name="senha" ng-model="login.senha" maxlength="16" placeholder="Senha" ng-required="true"> 
+                <span class="assertive" ng-show="formLogin.senha.$invalid && formLogin.senha.$dirty">!</span>
+            </label>
+            </div>
+        </form>
+
+        <div>
+            <button class="button button-block button-positive icon-left ion-email" ng-disabled="formLogin.$invalid" ng-click="loginUsuario(login)"> 
+                Entrar com e-mail
+            </button> 
+            <!--<button class="button button-block button-positive icon-left icon ion-social-facebook-outline"> 
+                Entrar com Facebook
+            </button> -->
+        </div>
+        <div class="center">
+            <button class="button button-clear button-positive" ng-click="abreModalCad()">Criar uma conta com e-mail</button>
+        </div>
+    </ion-content>
+</ion-view>

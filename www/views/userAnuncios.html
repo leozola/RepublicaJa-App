@@ -1,0 +1,16 @@
+<ion-view title="Anúncios">  
+    <ion-content> 
+        <div class="info">
+                <b>As suas repúblicas anunciadas</b> 
+            </div>
+        <ion-list class="list" can-swipe="myswipe" ng-repeat="anuncio in anuncios | filter: {idusuario: id}">
+            <ion-item class="item item-thumbnail-left" ng-click="perfilRepublica(anuncio.idanuncio)">
+                <img src="img/Strabburg.jpg"> 
+                <h2>{{anuncio.titulo}}</h2> 
+                <p>Anunciada em: {{anuncio.data_anuncio}}</p>  
+                <p>Toque para mais informações.</p>   
+                <ion-option-button class="button-assertive button-info" ng-click="apagarAnuncio(anuncio)">Apagar</ion-option-button>       
+            </ion-item> 
+        </ion-list>
+    </ion-content> 
+</ion-view>

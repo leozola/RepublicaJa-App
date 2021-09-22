@@ -1,0 +1,34 @@
+<ion-view title="Perfil"> 
+    <ion-content>  
+        <div class="list card">
+            <div class="item item-avatar">
+                <img src="img/user.png">
+                <h2>{{dadosUser.nome}}</h2>
+                <p>Cadastrou-se em {{dadosUser.data_user}}</p> 
+            </div> 
+            <div class="item item-body"> 
+                <h2 class="titulo ">Seus dados:</h2> 
+                <p> 
+                     <i class="icon ion-clipboard"></i>
+                   ID: {{dadosUser.idusuario}}
+                </p>
+                <p> 
+                     <i class="icon ion-email"></i>
+                    {{dadosUser.email}}
+                </p>
+                <p> 
+                    <i class="icon ion-android-call"></i>
+                   {{dadosUser.telefone}} 
+                </p> 
+                <p> 
+                   <i class="icon ion-android-phone-portrait"></i>
+                   {{dadosUser.celular}} 
+                </p>
+                <div class="item item">
+                        <button class="button icon-left ion-edit button-positive" ng-click="abreModal()">Alterar dados</button> 
+                        <button class="button icon-left ion-log-out button-assertive" ng-click="sair()">Sair</button>
+                </div>
+            </div>
+        </div> 
+    </ion-content>
+</ion-view>

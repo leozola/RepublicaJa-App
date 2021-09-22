@@ -1,0 +1,40 @@
+<ion-modal-view>
+    <ion-header-bar class="bar bar-header bar-positive">
+        <h1 class="title">Cadastro</h1> 
+        <button class="button" ng-click="fechaModalCad()">Cancelar</button>
+    </ion-header-bar> 
+    <ion-content>
+        <form name="formCadastro">
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Nome</span>
+                    <input type="text" name="nome" maxlength="60" ng-model="cadastro.nome" placeholder="John Lee" ng-required="true"> 
+                    <span class="assertive" ng-show="formCadastro.nome.$invalid && formCadastro.nome.$dirty">Preencha o campo nome corretamente</span>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">E-mail</span>
+                    <input type="email" name="email" maxlength="50" ng-model="cadastro.email" placeholder="john@email.com" ng-required="true"> 
+                    <span class="assertive" ng-show="formCadastro.email.$invalid && formCadastro.email.$dirty">Preencha o campo E-mail corretamente</span>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Celular</span>
+                    <input type="tel" name="celular" maxlength="13" ng-model="cadastro.celular" placeholder="(11)99999-9999" ng-required="true"> 
+                    <span class="assertive" ng-show="formCadastro.celular.$invalid && formCadastro.celular.$dirty">Preencha o campo celular corretamente</span>
+                </label> 
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Telefone</span>
+                    <input type="tel" name="telefone" maxlength="13" ng-model="cadastro.telefone" placeholder="(11)9999-9999 (Opcional)" ng-required="false"> 
+                    <span class="assertive" ng-show="formCadastro.telefone.$invalid && formCadastro.telefone.$dirty">Preencha o campo celular corretamente</span>
+                </label> 
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Senha</span>
+                    <input type="password" name="senha" maxlength="16" ng-model="cadastro.senha" placeholder="Senha" ng-required="true"> 
+                    <span class="assertive" ng-show="formCadastro.senha.$invalid && formCadastro.senha.$dirty">Preencha o campo senha corretamente</span>
+                </label>
+            </div>
+        </form> 
+        <button class="button button-block button-positive" ng-disabled="formCadastro.$invalid" ng-click="cadastroUsuario(cadastro)">
+            Cadastrar
+        </button> 
+    </ion-content>
+</ion-modal-view>

@@ -1,0 +1,83 @@
+<ion-view title="Republica">
+    <ion-content> 
+        <form name="formfavoritaRepublica" ng-submit="favoritaRepublica(republicaPerfil)">
+        <div ng-repeat="republica in republicaPerfil">  
+            <div class="item item-image">
+                <ion-slide-box on-slide-changed="slideHasChanged($index)">
+                    <ion-slide>
+                        <div class="box blue"><img src="img/Strabburg.jpg"> </div>
+                    </ion-slide>
+                    <ion-slide>
+                        <div class="box yellow"><img src="img/Strabburg.jpg"> </div>
+                    </ion-slide>
+                    <ion-slide>
+                        <div class="box pink"><img src="img/Strabburg.jpg"> </div>
+                    </ion-slide>
+                </ion-slide-box>
+            </div>
+            
+            <div class="item item-body">
+                <h2 class="titulo">{{republica.titulo}}</h2> 
+                
+                <a class="subdued">
+                    <i class="icon ion-person-stalker"></i> 
+                    Vagas: {{republica.vagas}}
+                </a>  
+                <a class="preco">
+                    <i class="icon ion-pricetag"></i> 
+                    R$ {{republica.valor}}
+                </a> 
+            </div>  
+            <div class="item item-body">  
+                <h3 class="titulo">
+                    <i class="icon ion-clipboard"></i>
+                    Descrição:
+                <h3>
+                <p>{{republica.descricao}}</p>
+            </div> 
+            <div class="item item-body">   
+                <h3 class="titulo"> 
+                    <i class="icon ion-location"></i>
+                    Endereço:
+                <h3> 
+                <!--<a class="subdued">
+                    <i class="icon ion-location"></i> 
+                    {{republica.cidade}}
+                </a>  -->
+                <p>{{republica.endereco}}, {{republica.bairro}}, 
+                    {{republica.cidade}}, {{republica.estado}}, {{republica.cep}}.</p>    
+            </div> 
+            <div class="item item-body">
+                <h3 class="titulo">
+                    <i class="icon ion-chatbubbles"></i>
+                    Contato: 
+                <h3>  
+                    
+                    <p>
+                        <i class="icon ion-person"></i>  
+                        {{republica.nome}}
+                    </p>
+
+                    <p> 
+                        <i class="icon ion-email"></i>             
+                        E-mail: {{republica.email}}
+                    <p>
+                
+                    <a href="tel: {{republica.celular}}" class="button button-clear button-positive">
+                       <i class="icon ion-android-phone-portrait"></i>
+                        {{republica.celular}}
+                    </a>
+                
+                    <a href="tel: {{republica.telefone}}" class="button button-clear button-positive">
+                        <i class="icon ion-android-call"></i>
+                        {{republica.telefone}}
+                    </a>  
+                    <!--<button class="button button-clear button-positive" type="submit">
+                       <i class="icon ion-star"></i>
+                        Favoritar
+                    </button>  -->
+                    </form>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

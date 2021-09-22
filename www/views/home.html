@@ -1,0 +1,43 @@
+<ion-view title="Home">  
+    <ion-content> 
+        <h1>{{loginPg}}</h1>
+        <form name="formBusca"> 
+        <div class="list list-inset"> 
+            <label class="item item-input"> 
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" name="local" ng-model="busca.local" placeholder="Busque pela cidade ou cep" ng-required="true">  
+                <span class="assertive" ng-show="formCadastro.local.$invalid && formCadastro.local.$dirty">Preencha com dados correto.</span>
+            </label> 
+            <div class="button-bar">
+                    <!--<a class="button button-dark" ng-click="limparBusca()">Limpar</a> -->
+                    <a class="button button-positive" ng-click="buscaRepublica(busca)">
+                        <i class="icon ion-search"></i>
+                        Buscar
+                    </a>
+            </div>
+        </div> 
+        </form>
+        <div class="list card" ng-repeat="anuncio in anuncios | orderBy: 'data_anuncio'">
+            <div class="item item-avatar">
+                <img src="img/user.png">
+                <h2>{{anuncio.nome}}</h2>
+                <p>{{anuncio.data_anuncio}}</p> 
+            </div> 
+            <div class="item item-body" ng-click="perfilRepublica(anuncio.idanuncio)">
+                <img class="full-image" src="img/Strabburg.jpg"> 
+                <h2 class="titulo">{{anuncio.titulo}}</h2>
+                <p>
+                   {{anuncio.descricao}} 
+                </p>
+                <p>
+                <a class="preco">R$ {{anuncio.valor}}</a> 
+                <a href="#" class="subdued">
+                    <i class="icon ion-location"></i> 
+                    {{anuncio.cidade}}
+                </a> 
+                <a class="subdued">Toque para ver mais</a>
+                </p> 
+            </div>
+        </div> 
+    </ion-content> 
+</ion-view>

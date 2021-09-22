@@ -1,0 +1,84 @@
+<ion-view title="Anúncio">
+    <ion-content>
+    
+    <form name="formAnuncio">
+        <div class="info">
+            <b>Aprensente a república</b> 
+            </div>
+        <div class="list">
+            <label class="item item-input item-floating-label"> 
+                <span class="input-label">Título</span>
+                <input type="text" maxlength="60" name="titulo" placeholder="Dê um título ao anúncio" ng-model="anuncio.titulo" ng-required="true"> 
+                <span class="assertive" ng-show="formAnuncio.titulo.$invalid && formAnuncio.titulo.$dirty">Preencha o campo titulo corretamente</span>
+            </label>
+
+            <label class="item item-input item-floating-label"> 
+                <span class="input-label">Descrição</span>
+                <textarea name="descricao" maxlength="300" placeholder="Escreva uma breve descrição" ng-model="anuncio.descricao" ng-required="true"></textarea> 
+                <span class="assertive" ng-show="formAnuncio.descricao.$invalid && formAnuncio.descricao.$dirty">Preencha o campo descricao corretamente</span>
+            </label>   
+            
+            <div class="info">
+                <b>Informe onde está localizado</b> 
+            </div>
+            
+            <label class="item item-input item-floating-label"> 
+                <span class="input-label">CEP</span>
+                <input type="text" maxlength="9" name="cep" placeholder="CEP" ng-model="anuncio.cep">
+            </label> 
+                <label class="item item-input item-select" >
+                    <div class="input-label">
+                        Estado
+                    </div>
+                <select name="estado" ng-model="anuncio.estado" ng-required="true">
+                    <option  ng-repeat="estado in estados" selected>{{estado}}</option>
+                </select>
+            </label> 
+            <label class="item item-input item-floating-label"> 
+                <span class="input-label">Cidade</span>
+                <input type="text" maxlength="30" name="cidade" placeholder="Cidade" ng-model="anuncio.cidade" ng-required="true"> 
+                <span class="assertive" ng-show="formAnuncio.cidade.$invalid && formAnuncio.cidade.$dirty">Preencha o campo cidade corretamente</span>
+            </label> 
+            <label class="item item-input item-floating-label"> 
+                <span class="input-label">Endereço</span>
+                <input type="text" maxlength="60" name="endereco" placeholder="Endereço" ng-model="anuncio.endereco" ng-required="true"> 
+                <span class="assertive" ng-show="formAnuncio.endereco.$invalid && formAnuncio.endereco.$dirty">Preencha o campo endereco corretamente</span>
+            </label> 
+            <label class="item item-input item-floating-label"> 
+                <span class="input-label">Bairro</span>
+                <input type="text" maxlength="30" name="bairro" placeholder="Bairro" ng-model="anuncio.bairro" ng-required="true"> 
+                <span class="assertive" ng-show="formAnuncio.bairro.$invalid && formAnuncio.bairro.$dirty">Preencha o campo bairro corretamente</span>
+            </label>  
+
+            <div class="info">
+                <b>Outras informações</b> 
+            </div>
+            
+            <label class="item item-input item-floating-label"> 
+                <span class="input-label">Quantidade de vagas</span>
+                <input type="number" min="1" max="999" name="vagas" placeholder="Quantidade de vagas" ng-model="anuncio.vagas" ng-required="true"> 
+                <span class="assertive" ng-show="formAnuncio.vagas.$invalid && formAnuncio.vagas.$dirty">Preencha o campo vagas corretamente</span>
+            </label> 
+            <label class="item item-input item-floating-label"> 
+                <span class="input-label">Valor</span>
+                <input type="number" min="0" name="valor" placeholder="Valor da república" ng-model="anuncio.valor" ng-required="true"> 
+                <span class="assertive" ng-show="formAnuncio.valor.$invalid && formAnuncio.valor.$dirty">Preencha o campo valor corretamente</span>
+            </label>  
+            <div class="info">
+                <b>Termos de anúncio</b> 
+            </div>    
+            <ion-list>
+                <ion-radio name="iduser" ng-model="anuncio.iduser" ng-value="id" ng-required="true">
+                    <p>Selecione aqui para aceitar.</p>
+                    </ion-radio> 
+            </ion-list>
+        </div>  
+    </form>   
+    
+    <button class="button button-block button-positive" ng-disabled="formAnuncio.$invalid" ng-click="anunciarRep(anuncio)">
+            <i class="icon ion-speakerphone"></i>
+            Anunciar
+    </button>
+
+    </ion-content>
+</ion-view>
